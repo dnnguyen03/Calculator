@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    list-style-type: none;
+    text-decoration: none;
+}
+.background{
+  background-image: url(../assets/image/number-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  max-height: 100%;
+
+}
+.calculator {
+  max-width: 550px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 35px 40px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.9); 
+  box-shadow: 0px 0px 10px 7px rgba(103, 103, 103, 0.8);
+  
+  .display {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 1rem;
+    width: 100%;
+    border: 1px solid gray;
+    padding: 0 10px;
+    border-radius: 15px;
+    overflow: hidden;
+    .calculation {
+      font-size: 2.5rem;
+    }
+
+    .result {
+      font-size: 3.8rem;
+    }
+  }
+
+  .keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+    width: 100%;
+    button {
+      font-size: 2rem;
+      padding: 1rem;
+      border: 1px solid #979797;
+      border-radius: 0.25rem;
+      background-color: #f5f5f5;
+      box-shadow: 5px 5px 5px 1px rgba(103, 103, 103, 0.6);
+      transition: 0.1s ease;
+      &:active {
+        box-shadow: none;
+        transform: translateY(2px);
+      }
+      &.color{
+        background-color: #ff9800;
+        color: #fff;
+      }
+      &.equal {
+        grid-column: span 4;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .calculator{
+    width: 80%;
+    .display{
+      .calculation{
+        font-size: 2rem;
+      }
+      .result{
+        font-size: 3rem;
+      }
+    }
+    .keypad{
+      grid-gap: 0.8rem;
+      button{
+        font-size: 1.5rem;
+        padding: 1rem 0.3rem;
+      }
+    }
+  }
+}
+@media screen and (max-width: 480px){
+  .calculator{
+    padding: 30px 27px;
+    .display{
+      .calculation{
+        font-size: 1.5rem;
+      }
+      .result{
+        font-size: 2.5rem;
+      }
+    }
+    .keypad{
+      grid-gap: 0.5rem;
+      button{
+      font-size: 1.2rem;
+      box-shadow: 2px 2px 2px 1px rgba(103, 103, 103, 0.6);
+      }
+    }
+  }
+}
